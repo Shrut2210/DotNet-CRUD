@@ -1,0 +1,51 @@
+﻿@model OrderDetail
+<div class="card-body">
+    <h5 class="card-title">Order Detail List Form</h5>
+
+    <!-- Vertical Form -->
+    <form class="row g-3">
+        <input type="hidden" name="OrderDetailID" />
+        <div class="col-12">
+            <label for="inputNanme4" class="form-label">Order ID</label>
+            <input type="text" class="form-control" asp-for="OrderID">
+            <span asp-validation-for="OrderID"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputEmail4" class="form-label">Product ID</label>
+            <input type="number" asp-for="ProductID" class="form-control" id="inputEmail4">
+            <span asp-validation-for="ProductID"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputPassword4" class="form-label">Quantity</label>
+            <input type="text" asp-for="Quantity" class="form-control" id="inputPassword4">
+            <span asp-validation-for="Quantity"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Amount</label>
+            <input type="number" asp-for="Amount" class="form-control" id="inputAddress">
+            <span asp-validation-for="Amount"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">TotalAmount</label>
+            <input type="text" asp-for="TotalAmount" class="form-control" id="inputAddress">
+            <span asp-validation-for="TotalAmount"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">UserID</label>
+            <input type="number" class="form-control" asp-for="UserID" id="inputAddress">
+            <span asp-validation-for="UserID" class="text-danger"></span>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a asp-action="Index" asp-controller="OrderDetail" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form><!-- Vertical Form -->
+
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

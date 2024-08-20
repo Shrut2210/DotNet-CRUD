@@ -1,0 +1,56 @@
+﻿@model Bill
+<div class="card-body">
+    <h5 class="card-title">Bill List Form</h5>
+
+    <!-- Vertical Form -->
+    <form class="row g-3">
+        <input type="hidden" name="BillID" />
+        <div class="col-12">
+            <label for="inputNanme4" class="form-label">BillNumber</label>
+            <input type="text" class="form-control" asp-for="BillNumber">
+            <span asp-validation-for="BillNumber"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputEmail4" class="form-label">BillDate</label>
+            <input type="date" asp-for="BillDate" id="inputEmail4">
+            <span asp-validation-for="BillDate"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputPassword4" class="form-label">OrderID</label>
+            <input type="number" asp-for="OrderID" class="form-control" id="inputPassword4">
+            <span asp-validation-for="OrderID"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">TotalAmount</label>
+            <input type="number" asp-for="TotalAmount" class="form-control" id="inputAddress">
+            <span asp-validation-for="TotalAmount"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">Discount</label>
+            <input type="number" asp-for="Discount" class="form-control" id="inputAddress">
+            <span asp-validation-for="Discount"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">NetAmount</label>
+            <input type="number" asp-for="NetAmount" class="form-control" id="inputAddress">
+            <span asp-validation-for="NetAmount"></span>
+        </div>
+        <div class="col-12">
+            <label for="inputAddress" class="form-label">UserID</label>
+            <input type="number" class="form-control" asp-for="UserID" id="inputAddress">
+            <span asp-validation-for="UserID" class="text-danger"></span>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a asp-action="Index" asp-controller="Bill" class="btn btn-secondary">Cancel</a>
+        </div>
+    </form><!-- Vertical Form -->
+
+</div>
+
+@section Scripts
+{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

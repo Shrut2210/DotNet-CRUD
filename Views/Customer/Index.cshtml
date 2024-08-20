@@ -1,0 +1,68 @@
+﻿@model DataTable
+@using System.Data
+
+<div class="card-body">
+    <h5 class="card-title">Datatables</h5>
+    <p>Add lightweight datatables to your project with using the <a href="https://github.com/fiduswriter/Simple-DataTables" target="_blank">Simple DataTables</a> library. Just add <code>.datatable</code> class name to any table you wish to conver to a datatable. Check for <a href="https://fiduswriter.github.io/simple-datatables/demos/" target="_blank">more examples</a>.</p>
+
+    <!-- Table with stripped rows -->
+    <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
+        <div class="datatable-top">
+            <div class="datatable-dropdown">
+                <label>
+                    <select class="datatable-selector" name="per-page"><option value="5">5</option><option value="10" selected="">10</option><option value="15">15</option><option value="-1">All</option></select> entries per page
+                </label>
+            </div>
+            <div class="datatable-search">
+                <input class="datatable-input" placeholder="Search..." type="search" name="search" title="Search within table">
+            </div>
+            <div>
+                <a asp-controller="Customer" asp-action="CustomerAddEdit" class="btn btn-success">ADD</a>
+            </div>
+        </div>
+        <div class="datatable-container">
+            <table class="table datatable datatable-table">
+
+                <thead>
+                <th>CustomerID</th>
+                <th>CustomerName</th>
+                <th>HomeAddress</th>
+                <th>Email</th>
+                <th>MobileNo</th>
+                <th>GST NO </th>
+                <th>CityName</th>
+                <th>PinCode</th>
+                <th>NetAmount</th>
+                <th>User ID</th>
+                <th colspan="2"> Actions</th>
+                </thead>
+                <tbody>
+                    @foreach (DataRow row in Model.Rows)
+                    {
+                        <tr>
+                            <td>@row["CustomerID"]</td>
+                            <td>@row["CustomerName"]</td>
+                            <td>@row["HomeAddress"]</td>
+                            <td>@row["Email"]</td>
+                            <td>@row["MobileNo"]</td>
+                            <td>@row["GSTNO"]</td>
+                            <td>@row["CityName"]</td>
+                            <td>@row["PinCode"]</td>
+                            <td>@row["NetAmount"]</td>
+                            <td>@row["UserID"]</td>
+                            <td><a class="btn btn-primary">EDIT</a></td>
+                            <td><a class="btn btn-danger">DELETE</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="datatable-bottom">
+            <div class="datatable-info">Showing 1 to 10 of 100 entries</div>
+            <nav class="datatable-pagination"><ul class="datatable-pagination-list"><li class="datatable-pagination-list-item datatable-hidden datatable-disabled"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">‹</button></li><li class="datatable-pagination-list-item datatable-active"><button data-page="1" class="datatable-pagination-list-item-link" aria-label="Page 1">1</button></li><li class="datatable-pagination-list-item"><button data-page="2" class="datatable-pagination-list-item-link" aria-label="Page 2">2</button></li><li class="datatable-pagination-list-item"><button data-page="3" class="datatable-pagination-list-item-link" aria-label="Page 3">3</button></li><li class="datatable-pagination-list-item"><button data-page="4" class="datatable-pagination-list-item-link" aria-label="Page 4">4</button></li><li class="datatable-pagination-list-item"><button data-page="5" class="datatable-pagination-list-item-link" aria-label="Page 5">5</button></li><li class="datatable-pagination-list-item"><button data-page="6" class="datatable-pagination-list-item-link" aria-label="Page 6">6</button></li><li class="datatable-pagination-list-item"><button data-page="7" class="datatable-pagination-list-item-link" aria-label="Page 7">7</button></li><li class="datatable-pagination-list-item datatable-ellipsis datatable-disabled"><button class="datatable-pagination-list-item-link">…</button></li><li class="datatable-pagination-list-item"><button data-page="10" class="datatable-pagination-list-item-link" aria-label="Page 10">10</button></li><li class="datatable-pagination-list-item"><button data-page="2" class="datatable-pagination-list-item-link" aria-label="Page 2">›</button></li></ul></nav>
+        </div>
+    </div>
+    <!-- End Table with stripped rows -->
+
+</div>
+

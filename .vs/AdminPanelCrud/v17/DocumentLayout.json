@@ -1,0 +1,546 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\orderdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\orderdetail\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\order\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\customer\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\bill\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\bill\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\controllers\\orderdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:controllers\\orderdetailcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\controllers\\billcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:controllers\\billcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:models\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\user\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\dal\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:dal\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\bill\\billaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\bill\\billaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\user\\useraddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\user\\useraddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\product\\productaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\product\\productaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\orderdetail\\orderdetailaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\orderdetail\\orderdetailaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\order\\orderaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\order\\orderaddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\customer\\customeraddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\customer\\customeraddedit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:models\\bill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:models\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|d:\\individual folder\\shruti\\dotnet\\adminpanelcrud\\migrations\\20240817195608_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8119CA6A-33AA-4B43-925D-9A1D41DEF761}|AdminPanelCrud.csproj|solutionrelative:migrations\\20240817195608_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Controllers\\CustomerController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwAkAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T03:07:23.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "Controllers\\OrderController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBgAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T03:38:32.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Bill\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Bill\\Index.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Bill\\Index.cshtml",
+              "RelativeToolTip": "Views\\Bill\\Index.cshtml",
+              "ViewState": "AQIAACEAAAAAAAAAAAAAAAMAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-01T02:54:52.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Customer\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Customer\\Index.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Customer\\Index.cshtml",
+              "RelativeToolTip": "Views\\Customer\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADEAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-01T03:10:59.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Order\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\Index.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Order\\Index.cshtml",
+              "RelativeToolTip": "Views\\Order\\Index.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T03:42:02.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\OrderDetail\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\OrderDetail\\Index.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\OrderDetail\\Index.cshtml",
+              "RelativeToolTip": "Views\\OrderDetail\\Index.cshtml",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC0AAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-01T02:39:20.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\Index.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "Views\\Product\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACUAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T02:44:25.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "OrderDetailController.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\OrderDetailController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderDetailController.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\OrderDetailController.cs",
+              "RelativeToolTip": "Controllers\\OrderDetailController.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAzwBcAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T02:36:59.677Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAQwBgAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T20:02:34.515Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAwB4AAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T14:29:15.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "BillController.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\BillController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BillController.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\BillController.cs",
+              "RelativeToolTip": "Controllers\\BillController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T02:52:46.091Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\Customer.cs",
+              "RelativeDocumentMoniker": "Models\\Customer.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\Customer.cs",
+              "RelativeToolTip": "Models\\Customer.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBgAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T03:07:58.192Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\User\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\Index.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\User\\Index.cshtml",
+              "RelativeToolTip": "Views\\User\\Index.cshtml",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACsAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T03:27:44.41Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserDbContext.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\DAL\\UserDbContext.cs",
+              "RelativeDocumentMoniker": "DAL\\UserDbContext.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\DAL\\UserDbContext.cs",
+              "RelativeToolTip": "DAL\\UserDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T14:51:41.105Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T18:55:41.607Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "20240817195608_Initial.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Migrations\\20240817195608_Initial.cs",
+              "RelativeDocumentMoniker": "Migrations\\20240817195608_Initial.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Migrations\\20240817195608_Initial.cs",
+              "RelativeToolTip": "Migrations\\20240817195608_Initial.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBJwAgAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-17T19:56:08.909Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAYAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T03:24:14.302Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "OrderDetailAddEdit.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\OrderDetail\\OrderDetailAddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\OrderDetail\\OrderDetailAddEdit.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\OrderDetail\\OrderDetailAddEdit.cshtml",
+              "RelativeToolTip": "Views\\OrderDetail\\OrderDetailAddEdit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-01T02:42:37.295Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProductAddEdit.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Product\\ProductAddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Product\\ProductAddEdit.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Product\\ProductAddEdit.cshtml",
+              "RelativeToolTip": "Views\\Product\\ProductAddEdit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAnAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T03:13:44.343Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "UserAddEdit.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\User\\UserAddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\User\\UserAddEdit.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\User\\UserAddEdit.cshtml",
+              "RelativeToolTip": "Views\\User\\UserAddEdit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T03:32:30.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAADsBAAAAAAAAAAAUwEoBAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T02:39:41.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "BillAddEdit.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Bill\\BillAddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Bill\\BillAddEdit.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Bill\\BillAddEdit.cshtml",
+              "RelativeToolTip": "Views\\Bill\\BillAddEdit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-01T02:55:05.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "OrderAddEdit.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Order\\OrderAddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Order\\OrderAddEdit.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Order\\OrderAddEdit.cshtml",
+              "RelativeToolTip": "Views\\Order\\OrderAddEdit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T03:42:17.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CustomerAddEdit.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Customer\\CustomerAddEdit.cshtml",
+              "RelativeDocumentMoniker": "Views\\Customer\\CustomerAddEdit.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Customer\\CustomerAddEdit.cshtml",
+              "RelativeToolTip": "Views\\Customer\\CustomerAddEdit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-01T03:11:12.755Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Bill.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\Bill.cs",
+              "RelativeDocumentMoniker": "Models\\Bill.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\Bill.cs",
+              "RelativeToolTip": "Models\\Bill.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwAQAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T02:53:17.444Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "OrderDetail.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\OrderDetail.cs",
+              "RelativeDocumentMoniker": "Models\\OrderDetail.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\OrderDetail.cs",
+              "RelativeToolTip": "Models\\OrderDetail.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-01T02:37:17.333Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Models\\Order.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\Order.cs",
+              "RelativeToolTip": "Models\\Order.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAwA4AAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T03:42:32.324Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-07-31T05:19:38.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Product.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Models\\Product.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Models\\Product.cs",
+              "RelativeToolTip": "Models\\Product.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T02:44:42.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T02:38:44.108Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
