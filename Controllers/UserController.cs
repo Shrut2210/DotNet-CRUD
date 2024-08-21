@@ -32,6 +32,27 @@ namespace AdminPanelCrud.Controllers
             return View(dataTable);
         }
 
+        public IActionResult UserDelete(int UserID)
+        {
+            try
+            {
+                string connectionString = this._configuration.GetConnectionString("ConnectionString");
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                command.CommandText = "PR_User_Delete";
+                command.Parameters.Add("@UserID", SqlDbType.Int).Value = UserID;
+                command.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = ex.Message;
+                Console.WriteLine(ex.ToString());
+            }
+            return RedirectToAction("Index");
+        }
+
         public IActionResult UserAddEdit()
         {
             return View();

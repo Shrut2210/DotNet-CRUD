@@ -12,8 +12,9 @@
         </div>
         <div class="col-12">
             <label for="inputEmail4" class="form-label">Customer ID</label>
-            <input type="number" asp-for="CustomerID" class="form-control" id="inputEmail4">
-            <span asp-validation-for="CustomerID"></span>
+            <select class="form-control" asp-for="CustomerID" asp-items="@(new SelectList(ViewBag.CustomerList, "CustomerId", "CustomerName"))">
+                <option value="">Select Customer</option>
+            </select>
         </div>
         <div class="col-12">
             <label for="inputPassword4" class="form-label">PaymentMode</label>
@@ -32,8 +33,9 @@
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">UserID</label>
-            <input type="number" class="form-control" asp-for="UserID" id="inputAddress">
-            <span asp-validation-for="UserID" class="text-danger"></span>
+            <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                <option value="">Select User</option>
+            </select>
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit</button>

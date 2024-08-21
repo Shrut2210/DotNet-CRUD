@@ -45,7 +45,7 @@
                             <td>@row["TotalAmount"]</td>
                             <td>@row["UserID"]</td>
                             <td><a class="btn btn-primary">EDIT</a></td>
-                            <td><a class="btn btn-danger">DELETE</a></td>
+                            <td><a href="/OrderDetail/OrderDetailDelete?OrderDetailID=@row["OrderDetailID"]" class="btn btn-danger">DELETE</a></td>
                         </tr>
                     }
                 </tbody>

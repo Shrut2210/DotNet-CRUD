@@ -1,4 +1,6 @@
-﻿<div class="card-body">
+﻿@model Product;
+
+<div class="card-body">
     <h5 class="card-title">Product List Form</h5>
 
     <!-- Vertical Form -->
@@ -22,7 +24,9 @@
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">User ID</label>
-            <input type="number" class="form-control" id="inputAddress" >
+            <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                <option value="">Select User</option>
+            </select>
         </div>
         <div class="text-center">
             <a class="btn btn-primary">Submit</a>

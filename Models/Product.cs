@@ -22,4 +22,5 @@ namespace AdminPanelCrud.Models
         [Required]
         public int UserID { get; set; }
     }
+
 }

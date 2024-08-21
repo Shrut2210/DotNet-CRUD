@@ -7,12 +7,16 @@
         <input type="hidden" name="OrderDetailID" />
         <div class="col-12">
             <label for="inputNanme4" class="form-label">Order ID</label>
-            <input type="text" class="form-control" asp-for="OrderID">
+            <select class="form-control" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderId"))">
+                <option value="">Select Order ID</option>
+            </select>
             <span asp-validation-for="OrderID"></span>
         </div>
         <div class="col-12">
             <label for="inputEmail4" class="form-label">Product ID</label>
-            <input type="number" asp-for="ProductID" class="form-control" id="inputEmail4">
+            <select class="form-control" asp-for="ProductID" asp-items="@(new SelectList(ViewBag.ProductList, "ProductId", "ProductName"))">
+                <option value="">Select Product</option>
+            </select>
             <span asp-validation-for="ProductID"></span>
         </div>
         <div class="col-12">
@@ -26,13 +30,15 @@
             <span asp-validation-for="Amount"></span>
         </div>
         <div class="col-12">
-            <label for="inputAddress" class="form-label">TotalAmount</label>
+            <label for="inputAddress" class="form-label">Total Amount</label>
             <input type="text" asp-for="TotalAmount" class="form-control" id="inputAddress">
             <span asp-validation-for="TotalAmount"></span>
         </div>
         <div class="col-12">
-            <label for="inputAddress" class="form-label">UserID</label>
-            <input type="number" class="form-control" asp-for="UserID" id="inputAddress">
+            <label for="inputAddress" class="form-label">User ID</label>
+            <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                <option value="">Select User</option>
+            </select>
             <span asp-validation-for="UserID" class="text-danger"></span>
         </div>
         <div class="text-center">

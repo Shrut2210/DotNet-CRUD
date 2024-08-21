@@ -4398,11 +4398,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\AdminPanelCrud.csproj",
+      "projectUniqueName": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\AdminPanelCrud.csproj",
       "projectName": "AdminPanelCrud",
-      "projectPath": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\AdminPanelCrud.csproj",
+      "projectPath": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\AdminPanelCrud.csproj",
       "packagesPath": "C:\\Users\\Shruti\\.nuget\\packages\\",
-      "outputPath": "D:\\Individual Folder\\Shruti\\DotNet\\AdminPanelCrud\\obj\\",
+      "outputPath": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Shruti\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -42,8 +42,8 @@
                             <td>@row["MobileNo"]</td>
                             <td>@row["Address"]</td>
                             <td>@row["IsActive"]</td>
-                            <td><a class="btn btn-primary">EDIT</a></td>
-                            <td><a class="btn btn-danger">DELETE</a></td>
+                            <td><a  class="btn btn-primary">EDIT</a></td>
+                            <td><a href="/User/UserDelete?UserID=@row["UserID"]" class="btn btn-danger">DELETE</a></td>
                         </tr>
                     }
                 </tbody>

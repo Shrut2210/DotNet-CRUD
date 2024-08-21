@@ -16,9 +16,10 @@
             <span asp-validation-for="BillDate"></span>
         </div>
         <div class="col-12">
-            <label for="inputPassword4" class="form-label">OrderID</label>
-            <input type="number" asp-for="OrderID" class="form-control" id="inputPassword4">
-            <span asp-validation-for="OrderID"></span>
+            <label for="inputPassword4" class="form-label">Order ID</label>
+            <select class="form-control" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderId"))">
+                <option value="">Select OrderID</option>
+            </select>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">TotalAmount</label>
@@ -35,11 +36,12 @@
             <input type="number" asp-for="NetAmount" class="form-control" id="inputAddress">
             <span asp-validation-for="NetAmount"></span>
         </div>
-        <div class="col-12">
-            <label for="inputAddress" class="form-label">UserID</label>
-            <input type="number" class="form-control" asp-for="UserID" id="inputAddress">
-            <span asp-validation-for="UserID" class="text-danger"></span>
-        </div>
+         <div class="col-12">
+             <label for="inputAddress" class="form-label">UserID</label>
+            <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                <option value="">Select User</option>
+            </select>
+         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
             <a asp-action="Index" asp-controller="Bill" class="btn btn-secondary">Cancel</a>

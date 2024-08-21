@@ -1,5 +1,4 @@
-﻿
-@model DataTable
+﻿@model DataTable
 @using System.Data
 
 <div class="card-body">
@@ -42,8 +41,12 @@
                             <td>@row["ProductCode"]</td>
                             <td>@row["Description"]</td>
                             <td>@row["UserID"]</td>
-                            <td><a class="btn btn-primary">EDIT</a></td>
-                            <td><a class="btn btn-danger">DELETE</a></td>
+                            <td>
+                                <a class="btn btn-outline-success btn-xs" asp-controller="Product" asp-action="ProductAddEdit" asp-route-ProductID="@row["ProductID"]">
+                                    <i class="bi bi-pencil-fill"></i>
+                                </a>
+                            </td>
+                            <td><a href="/Product/ProductDelete?ProductID=@row["ProductID"]"><i class="bi bi-x btn btn-danger"></i></a></td>
                     </tr>
                 }
                 </tbody>

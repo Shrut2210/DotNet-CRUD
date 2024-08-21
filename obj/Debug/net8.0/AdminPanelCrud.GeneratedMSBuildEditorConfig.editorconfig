@@ -9,83 +9,83 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = AdminPanelCrud
 build_property.RootNamespace = AdminPanelCrud
-build_property.ProjectDir = D:\Individual Folder\Shruti\DotNet\AdminPanelCrud\
+build_property.ProjectDir = D:\Individual Folder\Shruti\DotNet\DotNet-CRUD\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Individual Folder\Shruti\DotNet\AdminPanelCrud
+build_property.MSBuildProjectDirectory = D:\Individual Folder\Shruti\DotNet\DotNet-CRUD
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Bill/BillAddEdit.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Bill/BillAddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxCaWxsQWRkRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Bill/Index.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Bill/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmlsbFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Customer/CustomerAddEdit.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Customer/CustomerAddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcQ3VzdG9tZXJBZGRFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Customer/Index.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Customer/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VzdG9tZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Home/Index.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/OrderDetail/Index.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/OrderDetail/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/OrderDetail/OrderDetailAddEdit.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/OrderDetail/OrderDetailAddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJEZXRhaWxcT3JkZXJEZXRhaWxBZGRFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Order/Index.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Order/OrderAddEdit.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Order/OrderAddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcT3JkZXJBZGRFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Product/Index.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Product/ProductAddEdit.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Product/ProductAddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxQcm9kdWN0QWRkRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Shared/Error.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/User/Index.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/User/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/User/UserAddEdit.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/User/UserAddEdit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxVc2VyQWRkRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/_ViewImports.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/_ViewStart.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Individual Folder/Shruti/DotNet/AdminPanelCrud/Views/Shared/_Layout.cshtml]
+[D:/Individual Folder/Shruti/DotNet/DotNet-CRUD/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-a86r9432jh
