@@ -49,7 +49,7 @@ namespace AdminPanelCrud.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult BillAddEdit()
+        public void Drop_Down()
         {
             string connectionString = this.configuration.GetConnectionString("ConnectionString");
             SqlConnection connection1 = new SqlConnection(connectionString);
@@ -86,6 +86,39 @@ namespace AdminPanelCrud.Controllers
                 orderList.Add(orderDropDownModel);
             }
             ViewBag.OrderList = orderList;
+        }
+
+        public IActionResult BillSave(Bill billModel)
+        {
+            
+            return View("BillAddEdit", billModel);
+        }
+
+        public IActionResult BillAddEdit()
+        {
+            Drop_Down();
+            string connectionString = this.configuration.GetConnectionString("ConnectionString");
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "PR_Product_Select_By_Primary_Key";
+            command.Parameters.AddWithValue("@ProductID", ProductID);
+            Console.WriteLine(ProductID);
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+            connection.Close();
+            Product productModel = new Product();
+
+            foreach (DataRow dataRow in table.Rows)
+            {
+                productModel.ProductName = @dataRow["ProductName"].ToString();
+                productModel.ProductCode = @dataRow["ProductCode"].ToString();
+                productModel.ProductPrice = Convert.ToDecimal(@dataRow["ProductPrice"]);
+                productModel.Description = @dataRow["Description"].ToString();
+                productModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
+            }
             return View();
         }
     }

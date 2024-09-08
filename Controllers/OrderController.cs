@@ -28,7 +28,8 @@ namespace AdminPanelCrud.Controllers
             table.Load(reader);
             return View(table);
         }
-        public IActionResult OrderAddEdit()
+
+        public void DropDown()
         {
             string connectionString = this.configuration.GetConnectionString("ConnectionString");
             SqlConnection connection1 = new SqlConnection(connectionString);
@@ -66,7 +67,70 @@ namespace AdminPanelCrud.Controllers
                 customerList.Add(customereDropDownModel);
             }
             ViewBag.CustomerList = customerList;
-            return View();
+        }
+        public IActionResult OrderAddEdit(int OrderID)
+        {
+            DropDown();
+
+            string connectionString = this.configuration.GetConnectionString("ConnectionString");
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "PR_Order_Select_By_Primary_Key";
+            command.Parameters.AddWithValue("@OrderID", OrderID);
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+            connection.Close();
+            Order orderModel = new Order();
+
+            foreach (DataRow dataRow in table.Rows)
+            {
+                orderModel.OrderDate = Convert.ToDateTime(@dataRow["OrderData"]);
+                orderModel.CustomerID = Convert.ToInt32(@dataRow["CustomerID"]);
+                orderModel.TotalAmount = Convert.ToDecimal(@dataRow["TotalAmount"]);
+                orderModel.PaymentMode = Convert.ToString(@dataRow["PaymentMode"]);
+                orderModel.ShippingAddress = Convert.ToString(dataRow["ShippingAddress"]);
+                orderModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
+            }
+            return View("OrderAddEdit", orderModel);
+        }
+
+        [HttpPost]
+        public ActionResult OrderSave(Order orderModel)
+        {
+            if (orderModel.UserID <= 0)
+            {
+                ModelState.AddModelError("UserID", "A valid User is required.");
+            }
+            if (ModelState.IsValid)
+            {
+                string connectionString = this.configuration.GetConnectionString("ConnectionString");
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                if (orderModel.OrderID > 0)
+                {
+                    command.CommandText = "PR_Order_Update";
+                    command.Parameters.Add("@OrderID", SqlDbType.Int).Value = orderModel.OrderID;
+
+                }
+                else
+                {
+                    command.CommandText = "PR_Order_Insert";
+                }
+                command.Parameters.Add("@OrderDate", SqlDbType.DateTime).Value = orderModel.OrderDate;
+                command.Parameters.Add("@CustomerID", SqlDbType.Int).Value = orderModel.CustomerID;
+                command.Parameters.Add("@PaymentMode", SqlDbType.VarChar).Value = orderModel.PaymentMode;
+                command.Parameters.Add("@TotalAmount", SqlDbType.Decimal).Value = orderModel.TotalAmount;
+                command.Parameters.Add("@ShippingAddress", SqlDbType.VarChar).Value = orderModel.ShippingAddress;
+                command.Parameters.Add("@UserID", SqlDbType.Int).Value = orderModel.UserID;
+                command.ExecuteNonQuery();
+                return RedirectToAction("Index");
+            }
+            return View("OrderAddEdit", orderModel);
         }
     }
 }

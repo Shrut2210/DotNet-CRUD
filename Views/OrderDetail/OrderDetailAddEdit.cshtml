@@ -7,7 +7,7 @@
         <input type="hidden" name="OrderDetailID" />
         <div class="col-12">
             <label for="inputNanme4" class="form-label">Order ID</label>
-            <select class="form-control" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderId"))">
+            <select class="form-control" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderID", Convert.ToString("OrderID")))">
                 <option value="">Select Order ID</option>
             </select>
             <span asp-validation-for="OrderID"></span>

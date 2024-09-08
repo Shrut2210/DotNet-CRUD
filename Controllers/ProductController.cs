@@ -1,8 +1,8 @@
-﻿using AdminPanelCrud.DAL;
-using AdminPanelCrud.Models;
+﻿using AdminPanelCrud.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
 
 namespace AdminPanelCrud.Controllers
 {
@@ -50,52 +50,25 @@ namespace AdminPanelCrud.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult ProductSave(Product productModel)
-        {
-            if (productModel.UserID <= 0)
-            {
-                ModelState.AddModelError("UserID", "A valid User is required.");
-            }
+        //public void DropDown()
+        //{
+            
+        //}
 
-            if (ModelState.IsValid)
-            {
-                string connectionString = this.configuration.GetConnectionString("ConnectionString");
-                SqlConnection connection = new SqlConnection(connectionString);
-                connection.Open();
-                SqlCommand command = connection.CreateCommand();
-                command.CommandType = CommandType.StoredProcedure;
-                if (productModel.ProductID == null)
-                {
-                    command.CommandText = "PR_Product_Insert";
-                }
-                else
-                {
-                    command.CommandText = "PR_Product_Update";
-                    command.Parameters.Add("@ProductID", SqlDbType.Int).Value = productModel.ProductID;
-                }
-                command.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = productModel.ProductName;
-                command.Parameters.Add("@ProductCode", SqlDbType.VarChar).Value = productModel.ProductCode;
-                command.Parameters.Add("@ProductPrice", SqlDbType.Decimal).Value = productModel.ProductPrice;
-                command.Parameters.Add("@Description", SqlDbType.VarChar).Value = productModel.Description;
-                command.Parameters.Add("@UserID", SqlDbType.Int).Value = productModel.UserID;
-                command.ExecuteNonQuery();
-                return RedirectToAction("ProductList");
-            }
-
-            return View("ProductAddEdit", productModel);
-        }
 
         public IActionResult ProductAddEdit(int ProductID)
         {
-            string connectionString = this.configuration.GetConnectionString("ConnectionString");
-            SqlConnection connection1 = new SqlConnection(connectionString);
+
+            string connectionString1 = this.configuration.GetConnectionString("ConnectionString");
+            SqlConnection connection1 = new SqlConnection(connectionString1);
             connection1.Open();
             SqlCommand command1 = connection1.CreateCommand();
-            command1.CommandType = System.Data.CommandType.StoredProcedure;
+            command1.CommandType = CommandType.StoredProcedure;
             command1.CommandText = "PR_User_DropDown";
             SqlDataReader reader1 = command1.ExecuteReader();
             DataTable dataTable1 = new DataTable();
             dataTable1.Load(reader1);
+            connection1.Close();
             List<UserDropDownModel> userList = new List<UserDropDownModel>();
 
             foreach (DataRow data in dataTable1.Rows)
@@ -105,21 +78,25 @@ namespace AdminPanelCrud.Controllers
                 userDropDownModel.UserName = data["UserName"].ToString();
                 userList.Add(userDropDownModel);
             }
+
             ViewBag.UserList = userList;
+
+            string connectionString = this.configuration.GetConnectionString("ConnectionString");
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             command.CommandType = CommandType.StoredProcedure;
             command.CommandText = "PR_Product_Select_By_Primary_Key";
             command.Parameters.AddWithValue("@ProductID", ProductID);
+            Console.WriteLine(ProductID);
             SqlDataReader reader = command.ExecuteReader();
             DataTable table = new DataTable();
             table.Load(reader);
+            connection.Close();
             Product productModel = new Product();
 
             foreach (DataRow dataRow in table.Rows)
             {
-                productModel.ProductID = Convert.ToInt32(@dataRow["ProductID"]);
                 productModel.ProductName = @dataRow["ProductName"].ToString();
                 productModel.ProductCode = @dataRow["ProductCode"].ToString();
                 productModel.ProductPrice = Convert.ToDecimal(@dataRow["ProductPrice"]);
@@ -127,6 +104,41 @@ namespace AdminPanelCrud.Controllers
                 productModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
             }
 
+            return View("ProductAddEdit", productModel);
+        }
+
+        [HttpPost]
+        public IActionResult ProductSave(Product productModel)
+        {
+            if (productModel.UserID <= 0)
+            {
+                ModelState.AddModelError("UserID", "A valid User is required.");
+            }
+            if (ModelState.IsValid)
+            {
+                string connectionString = this.configuration.GetConnectionString("ConnectionString");
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                if (productModel.ProductID > 0)
+                {
+                    command.CommandText = "PR_Product_Update";
+                    command.Parameters.Add("@ProductID", SqlDbType.Int).Value = productModel.ProductID;
+                    
+                }
+                else
+                {
+                    command.CommandText = "PR_Product_Insert";
+                }
+                command.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = productModel.ProductName;
+                command.Parameters.Add("@ProductPrice", SqlDbType.Decimal).Value = productModel.ProductPrice;
+                command.Parameters.Add("@ProductCode", SqlDbType.VarChar).Value = productModel.ProductCode;
+                command.Parameters.Add("@Description", SqlDbType.VarChar).Value = productModel.Description;
+                command.Parameters.Add("@UserID", SqlDbType.Int).Value = productModel.UserID;
+                command.ExecuteNonQuery();
+                return RedirectToAction("Index");
+            }
             return View("ProductAddEdit", productModel);
         }
     }

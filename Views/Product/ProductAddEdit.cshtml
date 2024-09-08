@@ -4,34 +4,56 @@
     <h5 class="card-title">Product List Form</h5>
 
     <!-- Vertical Form -->
-    <form class="row g-3">
+    <form class="row g-3" asp-controller="Product" asp-action="ProductSave">
         <input type="hidden" name="ProductID"/>
+        <div asp-validation-summaray="ModelOnly"></div>
         <div class="col-12">
             <label for="inputNanme4" class="form-label">Product Name</label>
-            <input type="text" class="form-control" id="inputNanme4">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" asp-for="ProductName" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-12">
             <label for="inputEmail4" class="form-label">Product Price</label>
-            <input type="number" class="form-control" id="inputEmail4">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" asp-for="ProductPrice" />
+                <span asp-validation-for="ProductPrice" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-12">
             <label for="inputPassword4" class="form-label">Product Code</label>
-            <input type="text" class="form-control" id="inputPassword4">
+            <div class="col-sm-10">
+                <input type="text" class="form-control" asp-for="ProductCode" />
+                <span asp-validation-for="ProductCode" class="text-danger"></span>
+            </div>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Description</label>
-            <input type="text" class="form-control" id="inputAddress" >
+            <div class="col-sm-10">
+                <input type="text" class="form-control" asp-for="Description" />
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
         </div>
-        <div class="col-12">
-            <label for="inputAddress" class="form-label">User ID</label>
-            <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
-                <option value="">Select User</option>
-            </select>
-        </div>
+         <div class="col-12">
+             <label for="inputAddress" class="form-label">User ID</label>
+            <div class="col-sm-10">
+                <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
+                    <option value="">Select User</option>
+                </select>
+                <span asp-validation-for="UserID" class="text-danger"></span>
+            </div>
+         </div>
         <div class="text-center">
-            <a class="btn btn-primary">Submit</a>
-            <a asp-action="Index" asp-controller="Product" class="btn btn-secondary">Cancel</a>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-danger">Reset</button>
         </div>
     </form><!-- Vertical Form -->
 
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

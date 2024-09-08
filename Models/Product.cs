@@ -4,8 +4,7 @@ namespace AdminPanelCrud.Models
 {
     public class Product
     {
-        [Required]
-        public int ProductID { get; set; }
+        public int? ProductID { get; set; }
 
         [Required]
         public string ProductName { get; set; }

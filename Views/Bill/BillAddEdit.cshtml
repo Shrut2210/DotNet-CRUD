@@ -17,7 +17,7 @@
         </div>
         <div class="col-12">
             <label for="inputPassword4" class="form-label">Order ID</label>
-            <select class="form-control" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderId"))">
+            <select class="form-control" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderID", Convert.ToString("OrderID")))">
                 <option value="">Select OrderID</option>
             </select>
         </div>
