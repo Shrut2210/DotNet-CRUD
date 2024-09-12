@@ -4,8 +4,8 @@
     <h5 class="card-title">Customer List Form</h5>
 
     <!-- Vertical Form -->
-    <form class="row g-3">
-        <input type="hidden" name="CustomerID" />
+    <form class="row g-3" asp-controller="Customer" asp-action="CustomerSave">
+        <input type="hidden" name="CustomerID" asp-for="CustomerID"/>
         <div class="col-12">
             <label for="inputNanme4" class="form-label">Customer Name</label>
             <input type="text" asp-for="CustomerName" class="form-control" id="inputNanme4">

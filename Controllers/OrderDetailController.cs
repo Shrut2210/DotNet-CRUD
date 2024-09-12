@@ -106,12 +106,7 @@ namespace AdminPanelCrud.Controllers
             }
             ViewBag.ProductList = productList;
         }
-
-        public IActionResult OrderDetailSave(OrderDetail orderDetailModel)
-        {
-            
-        }
-        public IActionResult OrderDetailAddEdit()
+        public IActionResult OrderDetailAddEdit(int OrderDetailID)
         {
             DropDown();
             string connectionString = this.configuration.GetConnectionString("ConnectionString");
@@ -119,24 +114,61 @@ namespace AdminPanelCrud.Controllers
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "PR_Product_Select_By_Primary_Key";
-            command.Parameters.AddWithValue("@ProductID", ProductID);
-            Console.WriteLine(ProductID);
+            command.CommandText = "PR_Order_Detail_Select_By_Primary_Key";
+            command.Parameters.AddWithValue("@OrderDetailID", OrderDetailID);
+            Console.WriteLine(OrderDetailID);
             SqlDataReader reader = command.ExecuteReader();
             DataTable table = new DataTable();
             table.Load(reader);
             connection.Close();
-            Product productModel = new Product();
+            OrderDetail orderDetailModel = new OrderDetail();
 
             foreach (DataRow dataRow in table.Rows)
             {
-                productModel.ProductName = @dataRow["ProductName"].ToString();
-                productModel.ProductCode = @dataRow["ProductCode"].ToString();
-                productModel.ProductPrice = Convert.ToDecimal(@dataRow["ProductPrice"]);
-                productModel.Description = @dataRow["Description"].ToString();
-                productModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
+                orderDetailModel.OrderID = Convert.ToInt32(@dataRow["OrderID"]);
+                orderDetailModel.ProductID = Convert.ToInt32(@dataRow["ProductID"]);
+                orderDetailModel.Quantity = Convert.ToInt32(@dataRow["Quantity"]);
+                orderDetailModel.Amount = Convert.ToDecimal(@dataRow["Amount"]);
+                orderDetailModel.TotalAmount = Convert.ToDecimal(@dataRow["TotalAmount"]);
+                orderDetailModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
             }
-            return View();
+            return View("OrderDetailAddEdit", orderDetailModel);
+        }
+
+        public IActionResult OrderDetailSave(OrderDetail orderDetailModel)
+        {
+            if (orderDetailModel.UserID <= 0)
+            {
+                ModelState.AddModelError("UserID", "A valid User is required.");
+            }
+            if (ModelState.IsValid)
+            {
+                string connectionString = this.configuration.GetConnectionString("ConnectionString");
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                Console.WriteLine(orderDetailModel.OrderDetailID);
+                if (orderDetailModel.OrderDetailID == null || orderDetailModel.OrderDetailID == 0)
+                {
+                    command.CommandText = "PR_Order_Detail_Insert";
+
+                }
+                else
+                {
+                    command.CommandText = "PR_Order_Detail_Update";
+                    command.Parameters.Add("@OrderDetailID", SqlDbType.Int).Value = orderDetailModel.OrderDetailID;
+                }
+                command.Parameters.Add("@OrderID", SqlDbType.Int).Value = orderDetailModel.OrderID;
+                command.Parameters.Add("@ProductID", SqlDbType.Int).Value = orderDetailModel.ProductID;
+                command.Parameters.Add("@Quantity", SqlDbType.Int).Value = orderDetailModel.Quantity;
+                command.Parameters.Add("@Amount", SqlDbType.Decimal).Value = orderDetailModel.Amount;
+                command.Parameters.Add("@TotalAmount", SqlDbType.Decimal).Value = orderDetailModel.TotalAmount;
+                command.Parameters.Add("@UserID", SqlDbType.Int).Value = orderDetailModel.UserID;
+                command.ExecuteNonQuery();
+                return RedirectToAction("Index");
+            }
+            return View("OrderDetailAddEdit" , orderDetailModel);
         }
     }
 }

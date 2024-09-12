@@ -3,8 +3,8 @@
     <h5 class="card-title">Bill List Form</h5>
 
     <!-- Vertical Form -->
-    <form class="row g-3">
-        <input type="hidden" name="BillID" />
+    <form class="row g-3" asp-controller="Bill" asp-action="BillSave">
+        <input type="hidden" name="BillID" asp-for="BillID"/>
         <div class="col-12">
             <label for="inputNanme4" class="form-label">BillNumber</label>
             <input type="text" class="form-control" asp-for="BillNumber">

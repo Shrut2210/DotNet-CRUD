@@ -4,7 +4,7 @@
 
     <!-- Vertical Form -->
     <form class="row g-3" asp-controller="Order" asp-action="OrderSave">
-        <input type="hidden" name="OrderID" />
+        <input type="hidden" name="OrderID" asp-for="OrderID"/>
         <div class="col-12">
             <label for="inputNanme4" class="form-label">Order Date</label>
             <input type="date" asp-for="OrderDate"  >

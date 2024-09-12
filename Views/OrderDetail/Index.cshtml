@@ -1,16 +1,14 @@
 ﻿@model DataTable
 @using System.Data
 
-<div class="card-body">
-    <h5 class="card-title">Order Detail</h5>
-    <!-- Table with stripped rows -->
-    <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
-        <div class="datatable-top">
-            <div>
-                <a asp-controller="OrderDetail" asp-action="OrderDetailAddEdit" class="btn btn-success">ADD</a>
-            </div>
-        </div>
-        <div class="datatable-container">
+<div class="card-body d-flex flex-column  justify-content-center w-100">
+    <h5 class="card-title fs-2 fw-bold">Order Detail</h5>
+
+    <div class="w-25">
+        <a asp-controller="OrderDetail" asp-action="OrderDetailAddEdit" class="btn btn-success">ADD</a>
+    </div>
+</div>
+        <div class="datatable-container mt-4">
             <table class="table datatable datatable-table">
 
                 <thead>
@@ -32,8 +30,8 @@
                             <td>@row["Amount"]</td>
                             <td>@row["TotalAmount"]</td>
                             <td>@row["UserName"]</td>
-                            <td><a class="btn btn-primary">EDIT</a></td>
-                            <td><a href="/OrderDetail/OrderDetailDelete?OrderDetailID=@row["OrderDetailID"]" class="btn btn-danger">DELETE</a></td>
+                            <td><a class="btn btn-primary" asp-controller="OrderDetail" asp-action="OrderDetailAddEDit" asp-route-OrderDetailID="@row["OrderDetailID"]"><i class="bi bi-pencil-fill"></i></a></td>
+                            <td><a href="/OrderDetail/OrderDetailDelete?OrderDetailID=@row["OrderDetailID"]" class="btn btn-danger"><i class="bi-trash"></i></a></td>
                         </tr>
                     }
                 </tbody>

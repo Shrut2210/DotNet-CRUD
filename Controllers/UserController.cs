@@ -53,31 +53,68 @@ namespace AdminPanelCrud.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult UserAddEdit()
+        public IActionResult UserAddEdit(int UserID)
         {
-            string connectionString = this.configuration.GetConnectionString("ConnectionString");
+            string connectionString = this._configuration.GetConnectionString("ConnectionString");
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "PR_Product_Select_By_Primary_Key";
-            command.Parameters.AddWithValue("@ProductID", ProductID);
-            Console.WriteLine(ProductID);
+            command.CommandText = "PR_User_Select_By_Primary_Key";
+            command.Parameters.AddWithValue("@UserID", UserID);
+            Console.WriteLine(UserID);
             SqlDataReader reader = command.ExecuteReader();
             DataTable table = new DataTable();
             table.Load(reader);
             connection.Close();
-            Product productModel = new Product();
+            User userModel = new User();
 
             foreach (DataRow dataRow in table.Rows)
             {
-                productModel.ProductName = @dataRow["ProductName"].ToString();
-                productModel.ProductCode = @dataRow["ProductCode"].ToString();
-                productModel.ProductPrice = Convert.ToDecimal(@dataRow["ProductPrice"]);
-                productModel.Description = @dataRow["Description"].ToString();
-                productModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
+                userModel.UserName = @dataRow["UserName"].ToString();
+                userModel.Email = @dataRow["Email"].ToString();
+                userModel.Password = @dataRow["Password"].ToString();
+                userModel.MobileNo = @dataRow["MobileNo"].ToString();
+                userModel.Address = @dataRow["Address"].ToString();
+                userModel.IsActive = Convert.ToBoolean(@dataRow["IsActive"]);
             }
-            return View();
+            return View("UserAddEdit", userModel);
+        }
+
+        public IActionResult UserSave(User userModel)
+        {
+            if (userModel.UserID <= 0)
+            {
+                ModelState.AddModelError("UserID", "A valid User is required.");
+            }
+            if (ModelState.IsValid)
+            {
+                string connectionString = this._configuration.GetConnectionString("ConnectionString");
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                Console.WriteLine(userModel.UserID);
+                if (userModel.UserID == null || userModel.UserID == 0)
+                {
+                    command.CommandText = "PR_User_Insert";
+
+                }
+                else
+                {
+                    command.CommandText = "PR_User_Update";
+                    command.Parameters.Add("@UserId", SqlDbType.Int).Value = userModel.UserID;
+                }
+                command.Parameters.Add("@UserName", SqlDbType.VarChar).Value = userModel.UserName;
+                command.Parameters.Add("@Email", SqlDbType.VarChar).Value = userModel.Email;
+                command.Parameters.Add("@Password", SqlDbType.VarChar).Value = userModel.Password;
+                command.Parameters.Add("@MobileNo", SqlDbType.VarChar).Value = userModel.MobileNo;
+                command.Parameters.Add("@Address", SqlDbType.VarChar).Value = userModel.Address;
+                command.Parameters.Add("@IsActive", SqlDbType.Bit).Value = userModel.IsActive;
+                command.ExecuteNonQuery();
+                return RedirectToAction("Index");
+            }
+            return View("UserAddEdit", userModel);
         }
     }
 }

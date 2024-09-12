@@ -88,13 +88,7 @@ namespace AdminPanelCrud.Controllers
             ViewBag.OrderList = orderList;
         }
 
-        public IActionResult BillSave(Bill billModel)
-        {
-            
-            return View("BillAddEdit", billModel);
-        }
-
-        public IActionResult BillAddEdit()
+        public IActionResult BillAddEdit(int BillID)
         {
             Drop_Down();
             string connectionString = this.configuration.GetConnectionString("ConnectionString");
@@ -102,24 +96,64 @@ namespace AdminPanelCrud.Controllers
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "PR_Product_Select_By_Primary_Key";
-            command.Parameters.AddWithValue("@ProductID", ProductID);
-            Console.WriteLine(ProductID);
+            command.CommandText = "PR_Bills_Select_By_Primary_Key";
+            command.Parameters.AddWithValue("@BillID", BillID);
+            Console.WriteLine(BillID);
             SqlDataReader reader = command.ExecuteReader();
             DataTable table = new DataTable();
             table.Load(reader);
             connection.Close();
-            Product productModel = new Product();
+            Bill billModel = new Bill();
 
             foreach (DataRow dataRow in table.Rows)
             {
-                productModel.ProductName = @dataRow["ProductName"].ToString();
-                productModel.ProductCode = @dataRow["ProductCode"].ToString();
-                productModel.ProductPrice = Convert.ToDecimal(@dataRow["ProductPrice"]);
-                productModel.Description = @dataRow["Description"].ToString();
-                productModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
+                billModel.BillNumber = @dataRow["BillNumber"].ToString();
+                billModel.BillDate = Convert.ToDateTime(@dataRow["BillDate"]);
+                billModel.OrderID = Convert.ToInt32(@dataRow["OrderID"]);
+                billModel.TotalAmount = Convert.ToDecimal(@dataRow["TotalAmount"]);
+                billModel.Discount = Convert.ToDecimal(@dataRow["Discount"]);
+                billModel.NetAmount = Convert.ToDecimal(@dataRow["NetAmount"]);
+                billModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
             }
-            return View();
+            return View("BillAddEdit", billModel);
+        }
+
+        [HttpPost]
+        public IActionResult BillSave(Bill billModel)
+        {
+            if (billModel.UserID <= 0)
+            {
+                ModelState.AddModelError("UserID", "A valid User is required.");
+            }
+            if (ModelState.IsValid)
+            {
+                string connectionString = this.configuration.GetConnectionString("ConnectionString");
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                Console.WriteLine(billModel.BillID);
+                if (billModel.BillID == null || billModel.BillID == 0 )
+                {
+                    command.CommandText = "PR_Bills_Insert";
+
+                }
+                else
+                {
+                    command.CommandText = "PR_Bills_Update";
+                    command.Parameters.Add("@BillID", SqlDbType.Int).Value = billModel.BillID;
+                }
+                command.Parameters.Add("@BillNumber", SqlDbType.VarChar).Value = billModel.BillNumber;
+                command.Parameters.Add("@BillDate", SqlDbType.DateTime).Value = billModel.BillDate;
+                command.Parameters.Add("@OrderID", SqlDbType.Int).Value = billModel.OrderID;
+                command.Parameters.Add("@TotalAmount", SqlDbType.Decimal).Value = billModel.TotalAmount;
+                command.Parameters.Add("@Discount", SqlDbType.Decimal).Value = billModel.Discount;
+                command.Parameters.Add("@NetAmount", SqlDbType.Decimal).Value = billModel.NetAmount;
+                command.Parameters.Add("@UserID", SqlDbType.Int).Value = billModel.UserID;
+                command.ExecuteNonQuery();
+                return RedirectToAction("Index");
+            }
+            return View("BillAddEdit", billModel);
         }
     }
 }

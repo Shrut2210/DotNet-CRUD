@@ -50,7 +50,7 @@ namespace AdminPanelCrud.Controllers
             }
             ViewBag.UserList = userList;
         }
-        public IActionResult CustomerAddEdit()
+        public IActionResult CustomerAddEdit(int CustomerID)
         {
             Drop_Down();
             string connectionString = this.configuration.GetConnectionString("ConnectionString");
@@ -58,24 +58,67 @@ namespace AdminPanelCrud.Controllers
             connection.Open();
             SqlCommand command = connection.CreateCommand();
             command.CommandType = CommandType.StoredProcedure;
-            command.CommandText = "PR_Product_Select_By_Primary_Key";
-            command.Parameters.AddWithValue("@ProductID", ProductID);
-            Console.WriteLine(ProductID);
+            command.CommandText = "PR_Customer_Select_By_Primary_Key";
+            command.Parameters.AddWithValue("@CustomerID", CustomerID);
+            Console.WriteLine(CustomerID);
             SqlDataReader reader = command.ExecuteReader();
             DataTable table = new DataTable();
             table.Load(reader);
             connection.Close();
-            Product productModel = new Product();
+            Customer customerModel = new Customer();
 
             foreach (DataRow dataRow in table.Rows)
             {
-                productModel.ProductName = @dataRow["ProductName"].ToString();
-                productModel.ProductCode = @dataRow["ProductCode"].ToString();
-                productModel.ProductPrice = Convert.ToDecimal(@dataRow["ProductPrice"]);
-                productModel.Description = @dataRow["Description"].ToString();
-                productModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
+                customerModel.CustomerName = @dataRow["CustomerName"].ToString();
+                customerModel.HomeAddress = @dataRow["HomeAddress"].ToString();
+                customerModel.Email = @dataRow["Email"].ToString();
+                customerModel.MobileNo = @dataRow["MobileNo"].ToString();
+                customerModel.GSTNO = @dataRow["GSTNO"].ToString();
+                customerModel.CityName = @dataRow["CityName"].ToString();
+                customerModel.PinCode = @dataRow["PinCode"].ToString();
+                customerModel.NetAmount = Convert.ToDecimal(@dataRow["NetAmount"]);
+                customerModel.UserID = Convert.ToInt32(@dataRow["UserID"]);
             }
-            return View();
+            return View("CustomerAddEdit", customerModel);
+        }
+
+        public ActionResult CustomerSave(Customer customerModel)
+        {
+            if (customerModel.UserID <= 0)
+            {
+                ModelState.AddModelError("UserID", "A valid User is required.");
+            }
+            if (ModelState.IsValid)
+            {
+                string connectionString = this.configuration.GetConnectionString("ConnectionString");
+                SqlConnection connection = new SqlConnection(connectionString);
+                connection.Open();
+                SqlCommand command = connection.CreateCommand();
+                command.CommandType = CommandType.StoredProcedure;
+                Console.WriteLine(customerModel.CustomerID);
+                if (customerModel.CustomerID == null || customerModel.CustomerID == 0 )
+                {
+                    command.CommandText = "PR_Customer_Insert";
+
+                }
+                else
+                {
+                    command.CommandText = "PR_Customers_Update";
+                    command.Parameters.Add("@CustomerID", SqlDbType.Int).Value = customerModel.CustomerID;
+                }
+                command.Parameters.Add("@CustomerName", SqlDbType.VarChar).Value = customerModel.CustomerName;
+                command.Parameters.Add("@HomeAddress", SqlDbType.VarChar).Value = customerModel.HomeAddress;
+                command.Parameters.Add("@Email", SqlDbType.VarChar).Value = customerModel.Email;
+                command.Parameters.Add("@MobileNo", SqlDbType.VarChar).Value = customerModel.MobileNo;
+                command.Parameters.Add("@GSTNO", SqlDbType.VarChar).Value = customerModel.GSTNO;
+                command.Parameters.Add("@CityName", SqlDbType.VarChar).Value = customerModel.CityName;
+                command.Parameters.Add("@PinCode", SqlDbType.VarChar).Value = customerModel.PinCode;
+                command.Parameters.Add("@NetAmount", SqlDbType.Decimal).Value = customerModel.NetAmount;
+                command.Parameters.Add("@UserID", SqlDbType.Int).Value = customerModel.UserID;
+                command.ExecuteNonQuery();
+                return RedirectToAction("Index");
+            }
+            return View( "CustomerAddEdit" ,customerModel);
         }
     }
 }

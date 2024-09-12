@@ -121,15 +121,16 @@ namespace AdminPanelCrud.Controllers
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
-                if (productModel.ProductID > 0)
+                Console.WriteLine(productModel.ProductID);
+                if (productModel.ProductID == null )
                 {
-                    command.CommandText = "PR_Product_Update";
-                    command.Parameters.Add("@ProductID", SqlDbType.Int).Value = productModel.ProductID;
+                    command.CommandText = "PR_Product_Insert";
                     
                 }
                 else
                 {
-                    command.CommandText = "PR_Product_Insert";
+                    command.CommandText = "PR_Product_Update";
+                    command.Parameters.Add("@ProductID", SqlDbType.Int).Value = productModel.ProductID;
                 }
                 command.Parameters.Add("@ProductName", SqlDbType.VarChar).Value = productModel.ProductName;
                 command.Parameters.Add("@ProductPrice", SqlDbType.Decimal).Value = productModel.ProductPrice;

@@ -1,16 +1,14 @@
 ﻿@model DataTable
 @using System.Data
 
-<div class="card-body">
-    <h5 class="card-title">Bills</h5>
-    <!-- Table with stripped rows -->
-    <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
-        <div class="datatable-top">
-            <div>
-                <a asp-controller="Bill" asp-action="BillAddEdit" class="btn btn-success">ADD</a>
-            </div>
-        </div>
-        <div class="datatable-container">
+<div class="card-body d-flex flex-column  justify-content-center w-100">
+    <h5 class="card-title fs-2 fw-bold">Bill</h5>
+
+    <div class="w-25">
+        <a asp-controller="Bill" asp-action="BillAddEdit" class="btn btn-success">ADD</a>
+    </div>
+</div>
+        <div class="datatable-container mt-4">
             <table class="table datatable datatable-table">
 
                 <thead>
@@ -32,8 +30,8 @@
                             <td>@row["TotalAmount"]</td>
                             <td>@row["Discount"]</td>
                             <td>@row["NetAmount"]</td>
-                            <td><a class="btn btn-primary">EDIT</a></td>
-                            <td><a href="/Bill/BillDelete?BillID=@row["BillID"]" class="btn btn-danger">DELETE</a></td>
+                        <td><a class="btn btn-primary" asp-action="BillAddEdit" asp-controller="Bill" asp-route-BillID="@row["BillID"]"><i class="bi bi-pencil-fill"></i></a></td>
+                        <td><a href="/Bill/BillDelete?BillID=@row["BillID"]" class="btn btn-danger"><i class="bi bi-trash"></a></td>
                         </tr>
                     }
                 </tbody>

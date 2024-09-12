@@ -29,7 +29,7 @@ namespace AdminPanelCrud.Controllers
             return View(table);
         }
 
-        public void DropDown()
+        public IActionResult OrderAddEdit(int OrderID)
         {
             string connectionString = this.configuration.GetConnectionString("ConnectionString");
             SqlConnection connection1 = new SqlConnection(connectionString);
@@ -67,12 +67,7 @@ namespace AdminPanelCrud.Controllers
                 customerList.Add(customereDropDownModel);
             }
             ViewBag.CustomerList = customerList;
-        }
-        public IActionResult OrderAddEdit(int OrderID)
-        {
-            DropDown();
 
-            string connectionString = this.configuration.GetConnectionString("ConnectionString");
             SqlConnection connection = new SqlConnection(connectionString);
             connection.Open();
             SqlCommand command = connection.CreateCommand();
@@ -87,7 +82,7 @@ namespace AdminPanelCrud.Controllers
 
             foreach (DataRow dataRow in table.Rows)
             {
-                orderModel.OrderDate = Convert.ToDateTime(@dataRow["OrderData"]);
+                orderModel.OrderDate = Convert.ToDateTime(@dataRow["OrderDate"]);
                 orderModel.CustomerID = Convert.ToInt32(@dataRow["CustomerID"]);
                 orderModel.TotalAmount = Convert.ToDecimal(@dataRow["TotalAmount"]);
                 orderModel.PaymentMode = Convert.ToString(@dataRow["PaymentMode"]);
@@ -111,15 +106,15 @@ namespace AdminPanelCrud.Controllers
                 connection.Open();
                 SqlCommand command = connection.CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
-                if (orderModel.OrderID > 0)
+                if (orderModel.OrderID == null || orderModel.OrderID == 0)
+                {
+                    command.CommandText = "PR_Order_Insert";
+                }
+                else
                 {
                     command.CommandText = "PR_Order_Update";
                     command.Parameters.Add("@OrderID", SqlDbType.Int).Value = orderModel.OrderID;
 
-                }
-                else
-                {
-                    command.CommandText = "PR_Order_Insert";
                 }
                 command.Parameters.Add("@OrderDate", SqlDbType.DateTime).Value = orderModel.OrderDate;
                 command.Parameters.Add("@CustomerID", SqlDbType.Int).Value = orderModel.CustomerID;

@@ -1,16 +1,14 @@
 ﻿@model DataTable
 @using System.Data
 
-<div class="card-body">
-    <h5 class="card-title">Customer</h5>
-    <!-- Table with stripped rows -->
-    <div class="datatable-wrapper datatable-loading no-footer sortable searchable fixed-columns">
-        <div class="datatable-top">
-            <div>
-                <a asp-controller="Customer" asp-action="CustomerAddEdit" class="btn btn-success">ADD</a>
-            </div>
-        </div>
-        <div class="datatable-container">
+<div class="card-body d-flex flex-column  justify-content-center w-100">
+    <h5 class="card-title fs-2 fw-bold">Customer</h5>
+
+    <div class="w-25">
+        <a asp-controller="Customer" asp-action="CustomerAddEdit" class="btn btn-success">ADD</a>
+    </div>
+</div>
+        <div class="datatable-container mt-4">
             <table class="table datatable datatable-table">
 
                 <thead>
@@ -40,8 +38,8 @@
                             <td>@row["PinCode"]</td>
                             <td>@row["NetAmount"]</td>
                             <td>@row["UserName"]</td>
-                            <td><a class="btn btn-primary">EDIT</a></td>
-                            <td><a class="btn btn-danger">DELETE</a></td>
+                            <td><a class="btn btn-primary" asp-controller="Customer" asp-action="CustomerAddEdit" asp-route-CustomerID="@row["CustomerID"]"><i class="bi bi-pencil-fill"></a></td>
+                            <td><a class="btn btn-danger"><i class="bi bi-trash"></a></td>
                         </tr>
                     }
                 </tbody>

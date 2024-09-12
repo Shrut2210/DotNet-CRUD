@@ -3,31 +3,37 @@
     <h5 class="card-title">User List Form</h5>
 
     <!-- Vertical Form -->
-    <form class="row g-3">
-        <input type="hidden" name="UserID" />
+    <form class="row g-3" asp-controller="User" asp-action="UserSave">
+        <input type="hidden" name="UserID" asp-for="UserID"/>
         <div class="col-12">
             <label for="inputNanme4" class="form-label">User Name</label>
-            <input type="text" class="form-control" id="inputNanme4">
+            <input type="text" asp-for="UserName" class="form-control" id="inputNanme4">
+            <span asp-validation-for="UserName"></span>
         </div>
         <div class="col-12">
             <label for="inputEmail4" class="form-label">Email</label>
-            <input type="email" class="form-control" id="inputEmail4">
+            <input type="email" asp-for="Email" class="form-control" id="inputEmail4">
+            <span asp-validation-for="Email"></span>
         </div>
         <div class="col-12">
             <label for="inputPassword4" class="form-label">Password</label>
-            <input type="password" class="form-control" id="inputPassword4">
+            <input type="password" asp-for="Password" class="form-control" id="inputPassword4">
+            <span asp-validation-for="Password"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">MobileNo</label>
-            <input type="text" class="form-control" id="inputAddress">
+            <input type="text" asp-for="MobileNo" class="form-control" id="inputAddress">
+            <span asp-validation-for="MobileNo"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Address</label>
-            <input type="text" class="form-control" id="inputAddress">
+            <input type="text" asp-for="Address" class="form-control" id="inputAddress">
+            <span asp-validation-for="Address"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">ISActive</label>
-            <input type="checkbox" >
+            <input type="checkbox" asp-for="IsActive">
+            <span asp-validation-for="IsActive"></span>
         </div>
         <div class="text-center">
             <a class="btn btn-primary">Submit</a>

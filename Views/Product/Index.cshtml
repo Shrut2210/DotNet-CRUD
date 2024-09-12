@@ -1,14 +1,14 @@
 ﻿@model DataTable
 @using System.Data
 
-<div class="card-body d-flex justify-content-between">
-              <h5 class="card-title">Product</h5>
+<div class="card-body d-flex flex-column  justify-content-center w-100">
+              <h5 class="card-title fs-2 fw-bold">Product</h5>
                                 
-                <div>
+                <div class="w-25">
                        <a asp-controller="Product" asp-action="ProductAddEdit" class="btn btn-success">ADD</a>
                 </div>
 </div>
-<div class="datatable-container">
+<div class="datatable-container mt-4">
     <table class="table datatable datatable-table">
 
        <thead>
@@ -31,7 +31,7 @@
                             <td>@row["Description"]</td>
                             <td>@row["UserName"]</td>
                             <td>
-                                <a class="btn btn-outline-success btn-xs" asp-controller="Product" asp-action="ProductAddEdit" asp-route-ProductID="@row["ProductID"]">
+                                <a class="btn btn-primary btn-xs" asp-controller="Product" asp-action="ProductAddEdit" asp-route-ProductID="@row["ProductID"]">
                                     <i class="bi bi-pencil-fill"></i>
                                 </a>
                             </td>
