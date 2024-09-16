@@ -3,16 +3,19 @@
 
 <div class="card-body d-flex flex-column  justify-content-center w-100">
     <h5 class="card-title fs-2 fw-bold">Customer</h5>
-
-    <div class="w-25">
-        <a asp-controller="Customer" asp-action="CustomerAddEdit" class="btn btn-success">ADD</a>
+    <div class="d-flex gap-1">
+        <div>
+            <a asp-controller="Customer" asp-action="CustomerAddEdit" class="btn btn-success">ADD</a>
+        </div>
+        <div>
+            <a asp-controller="Customer" asp-action="ExportToExcel" class="btn btn-success">Export</a>
+        </div>
     </div>
 </div>
         <div class="datatable-container mt-4">
             <table class="table datatable datatable-table">
 
                 <thead>
-                <th>CustomerID</th>
                 <th>CustomerName</th>
                 <th>HomeAddress</th>
                 <th>Email</th>
@@ -28,7 +31,6 @@
                     @foreach (DataRow row in Model.Rows)
                     {
                         <tr>
-                            <td>@row["CustomerID"]</td>
                             <td>@row["CustomerName"]</td>
                             <td>@row["HomeAddress"]</td>
                             <td>@row["Email"]</td>

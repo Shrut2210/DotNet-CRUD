@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sgy2bsfoLFz/04Bf056R4GUZOZM1dFEwf5BmrpcTRe8=",
+  "Hash": "F8WkTpN/cSyy7GfC0mRMbhOhxTV+7sBD3+HP+vDrvK4=",
   "Source": "AdminPanelCrud",
   "BasePath": "_content/AdminPanelCrud",
   "Mode": "Default",
@@ -131,12 +131,12 @@
       "OriginalItemSpec": "wwwroot\\img\\favicon.png"
     },
     {
-      "Identity": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\logo.png",
+      "Identity": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\logo2.jpg",
       "SourceId": "AdminPanelCrud",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\",
       "BasePath": "_content/AdminPanelCrud",
-      "RelativePath": "img/logo.png",
+      "RelativePath": "img/logo2.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,7 +147,26 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\logo.png"
+      "OriginalItemSpec": "wwwroot\\img\\logo2.jpg"
+    },
+    {
+      "Identity": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\logo-2.png",
+      "SourceId": "AdminPanelCrud",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\",
+      "BasePath": "_content/AdminPanelCrud",
+      "RelativePath": "img/logo-2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\logo-2.png"
     },
     {
       "Identity": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\messages-1.jpg",

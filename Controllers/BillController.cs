@@ -1,7 +1,9 @@
 ﻿using AdminPanelCrud.Models;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows;
 
 namespace AdminPanelCrud.Controllers
 {
@@ -40,12 +42,16 @@ namespace AdminPanelCrud.Controllers
                 command.CommandText = "PR_Bills_Delete";
                 command.Parameters.Add("@BillID", SqlDbType.Int).Value = BillID;
                 command.ExecuteNonQuery();
+
             }
+
             catch (Exception ex)
             {
                 TempData["ErrorMessage"] = ex.Message;
                 Console.WriteLine(ex.ToString());
             }
+
+            
             return RedirectToAction("Index");
         }
 
@@ -121,6 +127,8 @@ namespace AdminPanelCrud.Controllers
         [HttpPost]
         public IActionResult BillSave(Bill billModel)
         {
+            int flag = 0;
+
             if (billModel.UserID <= 0)
             {
                 ModelState.AddModelError("UserID", "A valid User is required.");
@@ -140,6 +148,7 @@ namespace AdminPanelCrud.Controllers
                 }
                 else
                 {
+                    flag = 1;
                     command.CommandText = "PR_Bills_Update";
                     command.Parameters.Add("@BillID", SqlDbType.Int).Value = billModel.BillID;
                 }
@@ -153,7 +162,62 @@ namespace AdminPanelCrud.Controllers
                 command.ExecuteNonQuery();
                 return RedirectToAction("Index");
             }
+
+            if (flag == 0)
+            {
+                
+            }
+            else
+            {
+
+            }
+
             return View("BillAddEdit", billModel);
+        }
+
+        public IActionResult ExportToExcel()
+        {
+            string connectionString = this.configuration.GetConnectionString("ConnectionString");
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "PR_Select_All_Bills";
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Sheet1");
+
+                // Add the headers
+                worksheet.Cells[1, 1].Value = "BillID";
+                worksheet.Cells[1, 2].Value = "BillNumber";
+                worksheet.Cells[1, 3].Value = "BillDate";
+                worksheet.Cells[1, 4].Value = "TotalAmount";
+                worksheet.Cells[1, 5].Value = "Discount";
+                worksheet.Cells[1, 6].Value = "NetAmount";
+                worksheet.Cells[1, 7].Value = "UserName";
+
+                // Add the data
+                int rowNumber = 0;
+                foreach (DataRow row in table.Rows)
+                {
+                    worksheet.Cells[rowNumber + 2, 1].Value = row["BillID"];
+                    worksheet.Cells[rowNumber + 2, 2].Value = row["BillNumber"];
+                    worksheet.Cells[rowNumber + 2, 3].Value = row["BillDate"];
+                    worksheet.Cells[rowNumber + 2, 4].Value = row["TotalAmount"];
+                    worksheet.Cells[rowNumber + 2, 5].Value = row["Discount"];
+                    worksheet.Cells[rowNumber + 2, 6].Value = row["NetAmount"];
+                    worksheet.Cells[rowNumber + 2, 7].Value = row["UserName"];
+                    rowNumber++;
+                }
+                var fileBytes = package.GetAsByteArray();
+                var fileName = "BillsData.xlsx";
+
+                return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
         }
     }
 }

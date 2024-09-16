@@ -1,5 +1,6 @@
 ﻿using AdminPanelCrud.Models;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -119,6 +120,55 @@ namespace AdminPanelCrud.Controllers
                 return RedirectToAction("Index");
             }
             return View( "CustomerAddEdit" ,customerModel);
+        }
+
+        public IActionResult ExportToExcel()
+        {
+            string connectionString = this.configuration.GetConnectionString("ConnectionString");
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "PR_Customer_Select_All";
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Sheet1");
+
+                // Add the headers
+                worksheet.Cells[1, 1].Value = "CustomerID";
+                worksheet.Cells[1, 2].Value = "CustomerName";
+                worksheet.Cells[1, 3].Value = "HomeAddress";
+                worksheet.Cells[1, 4].Value = "Email";
+                worksheet.Cells[1, 5].Value = "MobileNo";
+                worksheet.Cells[1, 6].Value = "GSTNO";
+                worksheet.Cells[1, 7].Value = "CityName";
+                worksheet.Cells[1, 8].Value = "PinCode";
+                worksheet.Cells[1, 9].Value = "NetAmount";
+
+                // Add the data
+                int rowNumber = 0;
+                foreach (DataRow row in table.Rows)
+                {
+                    worksheet.Cells[rowNumber + 2, 1].Value = row["CustomerID"];
+                    worksheet.Cells[rowNumber + 2, 2].Value = row["CustomerName"];
+                    worksheet.Cells[rowNumber + 2, 3].Value = row["HomeAddress"];
+                    worksheet.Cells[rowNumber + 2, 4].Value = row["Email"];
+                    worksheet.Cells[rowNumber + 2, 5].Value = row["MobileNo"];
+                    worksheet.Cells[rowNumber + 2, 6].Value = row["GSTNO"];
+                    worksheet.Cells[rowNumber + 2, 7].Value = row["CityName"];
+                    worksheet.Cells[rowNumber + 2, 8].Value = row["PinCode"];
+                    worksheet.Cells[rowNumber + 2, 9].Value = row["NetAmount"];
+                    rowNumber++;
+                }
+                var fileBytes = package.GetAsByteArray();
+                var fileName = "CustomersData.xlsx";
+
+                return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
         }
     }
 }

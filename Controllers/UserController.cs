@@ -1,6 +1,7 @@
 ﻿using AdminPanelCrud.DAL;
 using AdminPanelCrud.Models;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -83,10 +84,10 @@ namespace AdminPanelCrud.Controllers
 
         public IActionResult UserSave(User userModel)
         {
-            if (userModel.UserID <= 0)
-            {
-                ModelState.AddModelError("UserID", "A valid User is required.");
-            }
+            //if (userModel.UserID <= 0)
+            //{
+            //    ModelState.AddModelError("UserID", "A valid User is required.");
+            //}
             if (ModelState.IsValid)
             {
                 string connectionString = this._configuration.GetConnectionString("ConnectionString");
@@ -97,6 +98,7 @@ namespace AdminPanelCrud.Controllers
                 Console.WriteLine(userModel.UserID);
                 if (userModel.UserID == null || userModel.UserID == 0)
                 {
+                    Console.WriteLine("asbxhsbvxh");
                     command.CommandText = "PR_User_Insert";
 
                 }
@@ -115,6 +117,49 @@ namespace AdminPanelCrud.Controllers
                 return RedirectToAction("Index");
             }
             return View("UserAddEdit", userModel);
+        }
+
+        public IActionResult ExportToExcel()
+        {
+            string connectionString = this._configuration.GetConnectionString("ConnectionString");
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "PR_User_Select_All";
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Sheet1");
+
+                // Add the headers
+                worksheet.Cells[1, 1].Value = "UserID";
+                worksheet.Cells[1, 2].Value = "UserName";
+                worksheet.Cells[1, 3].Value = "Email";
+                worksheet.Cells[1, 4].Value = "Password";
+                worksheet.Cells[1, 5].Value = "MobileNo";
+                worksheet.Cells[1, 6].Value = "Address";
+
+                // Add the data
+                int rowNumber = 0;
+                foreach (DataRow row in table.Rows)
+                {
+                    worksheet.Cells[rowNumber + 2, 1].Value = row["UserID"];
+                    worksheet.Cells[rowNumber + 2, 2].Value = row["UserName"];
+                    worksheet.Cells[rowNumber + 2, 3].Value = row["Email"];
+                    worksheet.Cells[rowNumber + 2, 4].Value = row["Password"];
+                    worksheet.Cells[rowNumber + 2, 5].Value = row["MobileNo"];
+                    worksheet.Cells[rowNumber + 2, 6].Value = row["Address"];
+                    rowNumber++;
+                }
+                var fileBytes = package.GetAsByteArray();
+                var fileName = "UserData.xlsx";
+
+                return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using AdminPanelCrud.Models;
 using Microsoft.AspNetCore.Mvc;
+using OfficeOpenXml;
 using System.Data;
 using System.Data.SqlClient;
 
@@ -126,6 +127,51 @@ namespace AdminPanelCrud.Controllers
                 return RedirectToAction("Index");
             }
             return View("OrderAddEdit", orderModel);
+        }
+
+        public IActionResult ExportToExcel()
+        {
+            string connectionString = this.configuration.GetConnectionString("ConnectionString");
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "PR_Order_Select_All";
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Sheet1");
+
+                // Add the headers
+                worksheet.Cells[1, 1].Value = "OrderID";
+                worksheet.Cells[1, 2].Value = "OrderDate";
+                worksheet.Cells[1, 3].Value = "CustomerName";
+                worksheet.Cells[1, 4].Value = "PaymentMode";
+                worksheet.Cells[1, 5].Value = "TotalAmount";
+                worksheet.Cells[1, 6].Value = "ShippingAddress";
+                worksheet.Cells[1, 7].Value = "UserName";
+
+                // Add the data
+                int rowNumber = 0;
+                foreach (DataRow row in table.Rows)
+                {
+                    worksheet.Cells[rowNumber + 2, 1].Value = row["OrderID"];
+                    worksheet.Cells[rowNumber + 2, 2].Value = row["OrderDate"];
+                    worksheet.Cells[rowNumber + 2, 3].Value = row["CustomerName"];
+                    worksheet.Cells[rowNumber + 2, 4].Value = row["PaymentMode"];
+                    worksheet.Cells[rowNumber + 2, 5].Value = row["TotalAmount"];
+                    worksheet.Cells[rowNumber + 2, 6].Value = row["ShippingAddress"];
+                    worksheet.Cells[rowNumber + 2, 7].Value = row["UserName"];
+                    rowNumber++;
+                }
+                var fileBytes = package.GetAsByteArray();
+                var fileName = "OrdersData.xlsx";
+
+                return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
         }
     }
 }

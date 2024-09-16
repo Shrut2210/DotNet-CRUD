@@ -1,6 +1,7 @@
 ﻿using AdminPanelCrud.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Data;
+using OfficeOpenXml;
 using System.Data.SqlClient;
 using Microsoft.Extensions.Configuration;
 
@@ -52,7 +53,7 @@ namespace AdminPanelCrud.Controllers
 
         //public void DropDown()
         //{
-            
+
         //}
 
 
@@ -122,10 +123,10 @@ namespace AdminPanelCrud.Controllers
                 SqlCommand command = connection.CreateCommand();
                 command.CommandType = CommandType.StoredProcedure;
                 Console.WriteLine(productModel.ProductID);
-                if (productModel.ProductID == null )
+                if (productModel.ProductID == null)
                 {
                     command.CommandText = "PR_Product_Insert";
-                    
+
                 }
                 else
                 {
@@ -141,6 +142,53 @@ namespace AdminPanelCrud.Controllers
                 return RedirectToAction("Index");
             }
             return View("ProductAddEdit", productModel);
+        }
+
+        public IActionResult ExportToExcel()
+        {
+            string connectionString = this.configuration.GetConnectionString("ConnectionString");
+            SqlConnection connection = new SqlConnection(connectionString);
+            connection.Open();
+            SqlCommand command = connection.CreateCommand();
+            command.CommandType = CommandType.StoredProcedure;
+            command.CommandText = "PR_Product_Select_All";
+            SqlDataReader reader = command.ExecuteReader();
+            DataTable table = new DataTable();
+            table.Load(reader);
+
+            using (var package = new ExcelPackage())
+            {
+                var worksheet = package.Workbook.Worksheets.Add("Sheet1");
+
+                // Add the headers
+                worksheet.Cells[1, 1].Value = "ProductID";
+                worksheet.Cells[1, 2].Value = "ProductName";
+                worksheet.Cells[1, 3].Value = "ProductPrice";
+                worksheet.Cells[1, 4].Value = "ProductCode";
+                worksheet.Cells[1, 5].Value = "Description";
+                //worksheet.Cells[1, 6].Value = "UserId";
+                worksheet.Cells[1, 7].Value = "UserName";
+                //worksheet.Cells[1, 8].Value = "Email";
+
+                // Add the data
+                int rowNumber = 0;
+                foreach (DataRow row in table.Rows)
+                {
+                    worksheet.Cells[rowNumber + 2, 1].Value = row["ProductID"];
+                    worksheet.Cells[rowNumber + 2, 2].Value = row["ProductName"];
+                    worksheet.Cells[rowNumber + 2, 3].Value = row["ProductPrice"];
+                    worksheet.Cells[rowNumber + 2, 4].Value = row["ProductCode"];
+                    worksheet.Cells[rowNumber + 2, 5].Value = row["Description"];
+                    //worksheet.Cells[rowNumber + 2, 6].Value = row["UserId"];
+                    worksheet.Cells[rowNumber + 2, 7].Value = row["UserName"];
+                    //worksheet.Cells[rowNumber + 2, 8].Value = row["Email"];
+                    rowNumber++;
+                }
+                var fileBytes = package.GetAsByteArray();
+                var fileName = "ProductData.xlsx";
+
+                return File(fileBytes, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+            }
         }
     }
 }

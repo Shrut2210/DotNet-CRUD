@@ -21,8 +21,12 @@
       "PackagePath": "staticwebassets\\img\\favicon.png"
     },
     {
-      "Id": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\logo.png",
-      "PackagePath": "staticwebassets\\img\\logo.png"
+      "Id": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\logo-2.png",
+      "PackagePath": "staticwebassets\\img\\logo-2.png"
+    },
+    {
+      "Id": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\logo2.jpg",
+      "PackagePath": "staticwebassets\\img\\logo2.jpg"
     },
     {
       "Id": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\messages-1.jpg",

@@ -46,6 +46,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "EPPlus": {
+              "target": "Package",
+              "version": "[7.3.1, )"
+            },
+            "Lib.Extensions.System.Windows.Forms": {
+              "target": "Package",
+              "version": "[22.4.12, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.8, )"
@@ -63,6 +71,18 @@
             "System.Data.SqlClient": {
               "target": "Package",
               "version": "[4.8.6, )"
+            },
+            "System.Reactive.Windows.Forms": {
+              "target": "Package",
+              "version": "[6.0.1, )"
+            },
+            "System.Windows.Extensions": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "ZXing.Net.Bindings.Windows.Compatibility": {
+              "target": "Package",
+              "version": "[0.16.12, )"
             }
           },
           "imports": [
