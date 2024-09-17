@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AdminPanelCrud")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+91cbdb2c9260fcae32fdf8b31a8b362c9c911bb6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1062925741c889c3fa0c73c7026cc3fa054104bc")]
 [assembly: System.Reflection.AssemblyProductAttribute("AdminPanelCrud")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AdminPanelCrud")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

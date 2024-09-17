@@ -1,7 +1,7 @@
 ﻿@model Customer
 
 <div class="card-body">
-    <h5 class="card-title">Customer List Form</h5>
+    <h5 class="card-title">Customer Form</h5>
 
     <!-- Vertical Form -->
     <form class="row g-3" asp-controller="Customer" asp-action="CustomerSave">
@@ -9,48 +9,49 @@
         <div class="col-12">
             <label for="inputNanme4" class="form-label">Customer Name</label>
             <input type="text" asp-for="CustomerName" class="form-control" id="inputNanme4">
-            <span asp-validation-for="CustomerName"></span>
+            <span asp-validation-for="CustomerName" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputEmail4" class="form-label">Home Address</label>
             <input type="text" asp-for="HomeAddress" class="form-control" id="inputEmail4">
-            <span asp-validation-for="HomeAddress"></span>
+            <span asp-validation-for="HomeAddress" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputPassword4" class="form-label">Email</label>
             <input  type="email" asp-for="Email" class="form-control" id="inputPassword4">
-            <span asp-validation-for="Email"> </span>
+            <span asp-validation-for="Email" class="text-danger"> </span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Mobile No</label>
             <input type="text" asp-for="MobileNo" class="form-control" id="inputAddress">
-            <span asp-validation-for="MobileNo"></span>
+            <span asp-validation-for="MobileNo" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">GST NO</label>
             <input type="text" asp-for="GSTNO" class="form-control" id="inputAddress">
-            <span asp-validation-for="GSTNO"></span>
+            <span asp-validation-for="GSTNO" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">City Name</label>
             <input type="text" asp-for="CityName" class="form-control" id="inputAddress">
-            <span asp-validation-for="CityName"></span>
+            <span asp-validation-for="CityName" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">PinCode</label>
             <input type="text" asp-for="PinCode" class="form-control" id="inputAddress">
-            <span asp-validation-for="PinCode"></span>
+            <span asp-validation-for="PinCode" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Net Amount</label>
             <input type="number" asp-for="NetAmount" class="form-control" id="inputAddress">
-            <span asp-validation-for="NetAmount"></span>
+            <span asp-validation-for="NetAmount" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">User ID</label>
             <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
                 <option value="">Select User</option>
             </select>
+            <span asp-validation-for="UserID" class="text-danger"></span>
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit</button>

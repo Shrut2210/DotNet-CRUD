@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Shruti\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\noty.js",
+      "PackagePath": "staticwebassets\\noty.js"
+    },
+    {
+      "Id": "C:\\Users\\Shruti\\.nuget\\packages\\ntoastnotify\\8.0.0\\contentFiles\\any\\net6.0\\wwwroot\\toastr.js",
+      "PackagePath": "staticwebassets\\toastr.js"
+    },
+    {
       "Id": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AdminPanelCrud.bundle.scp.css",
       "PackagePath": "staticwebassets\\AdminPanelCrud.bundle.scp.css"
     },
@@ -27,6 +35,10 @@
     {
       "Id": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\logo2.jpg",
       "PackagePath": "staticwebassets\\img\\logo2.jpg"
+    },
+    {
+      "Id": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\logofinal.png",
+      "PackagePath": "staticwebassets\\img\\logofinal.png"
     },
     {
       "Id": "D:\\Individual Folder\\Shruti\\DotNet\\DotNet-CRUD\\wwwroot\\img\\messages-1.jpg",

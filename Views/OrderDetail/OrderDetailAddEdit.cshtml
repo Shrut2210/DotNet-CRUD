@@ -1,6 +1,6 @@
 ﻿@model OrderDetail
 <div class="card-body">
-    <h5 class="card-title">Order Detail List Form</h5>
+    <h5 class="card-title">Order Detail Form</h5>
 
     <!-- Vertical Form -->
     <form class="row g-3" asp-controller="OrderDetail" asp-action="OrderDetailSave">
@@ -10,36 +10,36 @@
             <select class="form-control" asp-for="OrderID" asp-items="@(new SelectList(ViewBag.OrderList, "OrderID", Convert.ToString("OrderID")))">
                 <option value="">Select Order ID</option>
             </select>
-            <span asp-validation-for="OrderID"></span>
+            <span asp-validation-for="OrderID" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputEmail4" class="form-label">Product ID</label>
             <select class="form-control" asp-for="ProductID" asp-items="@(new SelectList(ViewBag.ProductList, "ProductId", "ProductName"))">
                 <option value="">Select Product</option>
             </select>
-            <span asp-validation-for="ProductID"></span>
+            <span asp-validation-for="ProductID" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputPassword4" class="form-label">Quantity</label>
             <input type="text" asp-for="Quantity" class="form-control" id="inputPassword4">
-            <span asp-validation-for="Quantity"></span>
+            <span asp-validation-for="Quantity" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Amount</label>
             <input type="number" asp-for="Amount" class="form-control" id="inputAddress">
-            <span asp-validation-for="Amount"></span>
+            <span asp-validation-for="Amount" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">Total Amount</label>
             <input type="text" asp-for="TotalAmount" class="form-control" id="inputAddress">
-            <span asp-validation-for="TotalAmount"></span>
+            <span asp-validation-for="TotalAmount" class="text-danger"></span>
         </div>
         <div class="col-12">
             <label for="inputAddress" class="form-label">User ID</label>
             <select class="form-control" asp-for="UserID" asp-items="@(new SelectList(ViewBag.UserList, "UserID", "UserName"))">
                 <option value="">Select User</option>
             </select>
-            <span asp-validation-for="UserID" class="text-danger"></span>
+            <span asp-validation-for="UserID" class="text-danger" class="text-danger"></span>
         </div>
         <div class="text-center">
             <button type="submit" class="btn btn-primary">Submit</button>
